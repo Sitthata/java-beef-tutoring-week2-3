@@ -34,7 +34,6 @@ public class Calculator {
             default:
                 return -2;
         }
-
     }
 
 }
