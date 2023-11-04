@@ -1,4 +1,4 @@
-package org.example;
+package org.example.arrayFundamental;
 
 public class WarmUp {
     public static void main(String[] args) {
@@ -9,4 +9,9 @@ public class WarmUp {
     }
 
     // Create a BMI calculator (weight, height). BMI = weight / height^2
+    // student score -> studentScore
+    public static double bmiCalculator(int weight, int height) {
+        return weight / Math.pow(height, 2);
+    }
 }
+

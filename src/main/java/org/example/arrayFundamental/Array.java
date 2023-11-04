@@ -1,4 +1,4 @@
-package org.example;
+package org.example.arrayFundamental;
 
 public class Array {
     public static void main(String[] args) {
