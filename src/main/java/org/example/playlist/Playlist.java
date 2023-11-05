@@ -1,16 +1,40 @@
 package org.example.playlist;
 
+import java.util.Arrays;
+
 public class Playlist {
-    static String[] playlist;
+    static String[] playlist = new String[5];
     static int songCount = 0;
 
     public static void main(String[] args) {
-        playlist = new String[5];
+        // 0
+        addSong("SongA"); // 1
+        addSong("SongB"); // 2
+        addSong("SongC"); // 2
+        addSong("SongD"); // 2
+        showSong();
+        int numberSong = findSongIndex("null");
+        System.out.println(numberSong);
+        updateSong("Songbbbbbbb","SongAA");
+        showSong();
+    }
+
+    public boolean compareArray(int[] arr1, int[] arr2) {
+        return Arrays.equals(arr1, arr2);
     }
 
     public static void addSong(String songName) {
+        /*
+        "Die For You", "Shape of You"
+`       playlist = [null, ... 4]
+        addSong("Die For You")
+        playlist = ["Die for you", null ... 3]
+        addSong("Shape of You")
+        playlist = ["Die for you", "Shape of You", null ... 2]
+        */
+
         // We can return even when we are in void function
-        if (isValidInput(songName)) {
+        if (isInvalidInput(songName)) {
             System.out.println("Song name cannot be empty");
             return;
         }
@@ -19,23 +43,33 @@ public class Playlist {
             System.out.println("Playlist is full");
             return;
         }
-        // add song to the playlist here...
+
+
+        playlist[songCount] = songName;
+        songCount++;
     }
 
-    public static void showSong(String songName) {
+    public static void showSong() {
         // Write the code to print all song here...
     }
+
+    // [SongA, SongB ,Song C , , ]
+    // findSongIndex(SongC) -> 2
+    // findSongIndex(SongZ) -> -1
 
     public static int findSongIndex(String songName) {
         // Write the code to find the index of the song here...
         return -1;
     }
 
+    // [SongA, SongB , , , ]
+    // update(SongB, SongC)
+    // [SongA, SongC , , , ]
     public static void updateSong(String songName, String newSongName) {
         // Write the code to update the song here...
     }
 
-    public static boolean isValidInput(String songName) {
+    public static boolean isInvalidInput(String songName) {
         // Check for null or empty string
         return songName == null || songName.isBlank();
     }

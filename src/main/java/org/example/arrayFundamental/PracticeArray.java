@@ -10,8 +10,8 @@ public class PracticeArray {
 
     public static int arraySum(int[] array) {
         int sum = 0;
-        for (int i = 0; i < array.length; i++){
-            sum += array[i];
+        for (int num : array) {
+            sum += num;
         }
         return sum;
     }

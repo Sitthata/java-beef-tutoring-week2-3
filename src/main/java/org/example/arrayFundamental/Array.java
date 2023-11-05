@@ -19,7 +19,7 @@ public class Array {
 
         // Assign values
         pets[0] = "Cat";
-//        pets[1] = "Dog";
+        pets[1] = "Dog";
         // What is the length of pets array?
     }
 }

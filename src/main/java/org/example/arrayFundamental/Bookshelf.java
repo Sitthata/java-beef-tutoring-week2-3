@@ -13,13 +13,11 @@ public class Bookshelf {
         bookShelf[2] = "To Kill a Mockingbird";
 
         // What will print out?
-        System.out.println(bookShelf[1]);
+        System.out.println(bookShelf[1]); // "Lord of the Rings"
 
         // Display books on the bookshelf
         System.out.println("Books on the shelf:");
-        for(int i = 0; i < bookShelf.length; i++) {
 
-        }
 
         // Let's take a book from a second slot
         System.out.println("Reading from shelf: ");
