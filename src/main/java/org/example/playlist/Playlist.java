@@ -51,6 +51,13 @@ public class Playlist {
 
     public static void showSong() {
         // Write the code to print all song here...
+        // We can use songCount
+        for (int i = 0; i < playlist.length; i++) {
+            if (playlist[i] == null) {
+                break;
+            }
+            System.out.println(i + " - " + "[" + playlist[i] + "]");
+        }
     }
 
     // [SongA, SongB ,Song C , , ]
@@ -58,7 +65,12 @@ public class Playlist {
     // findSongIndex(SongZ) -> -1
 
     public static int findSongIndex(String songName) {
-        // Write the code to find the index of the song here...
+        // Write the code to find the index of the song here
+        for (int i = 0; i < songCount; i++) {
+            if (playlist[i].equals(songName)) {
+                return i;
+            }
+        }
         return -1;
     }
 
@@ -67,6 +79,12 @@ public class Playlist {
     // [SongA, SongC , , , ]
     public static void updateSong(String songName, String newSongName) {
         // Write the code to update the song here...
+        int index = findSongIndex(songName);
+        if (index == -1){
+            System.out.println("Song not found on playlist");
+            return;
+        }
+        playlist[index] = newSongName;
     }
 
     public static boolean isInvalidInput(String songName) {
